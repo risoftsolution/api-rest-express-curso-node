@@ -1,5 +1,5 @@
-const inicioDebug = require('debug')('app:inicio');
-const dbDebug = require('debug')('app:db');
+const debug = require('debug')('app:inicio');
+//const dbDebug = require('debug')('app:db');
 const  express = require('express');
 const config = require('config');
 //const logger =  require('./logger')
@@ -21,11 +21,11 @@ if(app.get('env') === 'development')
 {
     app.use(morgan('tiny'));
     //console.log('Morgan habilitado');
-    inicioDebug('Morgan esta habilitado')
+    debug('Morgan esta habilitado')
 }
 
 //trabajos con db
-dbDebug('Conectando con la base de datos');
+debug('Conectando con la base de datos');
 
 const usuarios = [
     {id:1, nombre:'Rose Nadine'},
